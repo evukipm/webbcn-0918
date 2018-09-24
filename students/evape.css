@@ -45,12 +45,27 @@ html {
  /* ----- Cabecera ----- */
  
  #cabecera .navbar{
-   padding:20px;
-   position:fixed;
-   top:0;
-   left:0;
-   display:flex;
-   flex-flow:row wrap;
-   justify-content:space-between;
-   width:100%;
+  box-sizing: content-box;
+  padding:20px;
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  border-bottom:1px solid #121212;
+ }
+ #cabecera .botones{
+  box-sizing: border-box;
+  width:50%;
+  box-sizing: content-box;
+ }
+ #cabecera button{
+  padding:10px;
+  border:1px solid #121212;
+  width:40%;
+ }
+ #cabecera a{
+   display:block;
+   padding:10px;
+   border:1px solid #121212;
  }
