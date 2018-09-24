@@ -1,3 +1,4 @@
+/* ---- Reset ---- */
 html {
     box-sizing: border-box;
   }
@@ -12,3 +13,44 @@ html {
   section.perfil img{
       width:40%;
   }
+
+  /* ----- layout ----- */
+  .container{
+    margin:0 20px;
+  }
+  /* ----- responsive ----- */
+
+  @media (min-width:768px){
+    section.perfil{
+      float:left;
+    }
+    section.experimentos{
+      float:right;
+    }
+    .container{
+      max-width:728px;
+      margin:0 auto;
+    }
+  }
+  /* ----- typography ----- */
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* ----- Boton de oculta muestra ----- */
+  .oculta{
+    display:none;
+  }
+
+ /* ----- Cabecera ----- */
+ 
+ #cabecera .navbar{
+   padding:20px;
+   position:fixed;
+   top:0;
+   left:0;
+   display:flex;
+   flex-flow:row wrap;
+   justify-content:space-between;
+   width:100%;
+ }

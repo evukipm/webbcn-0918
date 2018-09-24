@@ -9,14 +9,18 @@
 </head>
 
 <body id="cuerpo">
-  <header id="cabecera">
+  <header id="cabecera" class="container">
     <nav class="navbar">      
       <a href="../index.html">Index</a>
+      <div class="botones">
+        <button class="toggle-perfil">Esconde/Muestra el perfil</button>
+        <button class="toggle-experimentos">Esconde/Muestra los experimentos</button>
+      </div>
     </nav>
-      <h1>Cohort 09 2918</h1>
+    <h1>Cohort 09 2918</h1>
   </header>
   <main id="site-main">
-    <section class="perfil">
+    <section class="perfil container">
       <h2>Eva</h2>
       <p>Lorem ipsum <em>as </em>dolor sit amet, <strong>juas </strong>coibus et magnis dis parturient<span>Esto es un span</span></p>
       <img src="images/evape.JPG">
@@ -27,7 +31,7 @@
         <li>Codear</li>
       </ul>
     </section>
-    <section class="experimentos">
+    <section class="experimentos container">
       <h2>Experimentos</h2>
         <article class="card experiment">
           <header class="card-header">
@@ -45,4 +49,5 @@
     </section>
   </main>
 </body>
+<script src="evape.js"></script>
 </html>
