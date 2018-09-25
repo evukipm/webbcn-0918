@@ -14,19 +14,23 @@ function main(){
     function ocultaPerfil(e){
         perfil.classList.toggle("oculta");
         if(perfil.classList.contains("oculta")){
-            e.currentTarget.innerText = "Muestra el perfil"
+            e.currentTarget.style.backgroundColor = "#d1d1d1"
+            e.currentTarget.setAttribute("title", "Show the profile")
         }
         else{
-            e.currentTarget.innerText = "Oculta el perfil"
+            e.currentTarget.style.backgroundColor = "#80f442";
+            e.currentTarget.setAttribute("title", "Hide the profile")
         }
     }
     function ocultaExperimentos(e){
         experimentos.classList.toggle("oculta")
         if(experimentos.classList.contains("oculta")){
-            e.currentTarget.innerText = "Muestra los experimentos"
+            e.currentTarget.style.backgroundColor = "#d1d1d1";
+            e.currentTarget.setAttribute("title", "Show the experiments");
         }
         else{
-            e.currentTarget.innerText = "Oculta los experimentos"
+            e.currentTarget.style.backgroundColor = "#80f442";
+            e.currentTarget.setAttribute("title", "Hide the experiments");
         }
     }
 
@@ -39,7 +43,7 @@ function main(){
 
 //añadimos buscador de estudiantes con un en el html
  //seleccionamos input
- var input = document.querySelector('.input-student input');
+ var input = document.querySelector('.search input');
  //añadimos evento para cuando escribamos en el input
    input.addEventListener('keyup', handleKeyUp);
    input.addEventListener('click', function(event){
@@ -91,6 +95,22 @@ function handleKeyUp(){
     var results = findStudents(searchTerm);
     displayResults(results); 
 }
+
+//Counter de tiempo
+var counterContainer = document.querySelector(".counter-container")
+
+var counterNumber = document.querySelector(".counter-number");
+var counter = 10;
+counterNumber.innerText = counter;
+var intervalId = setInterval(function(){
+    counter--
+    counterNumber.innerText = counter;
+    if(!counter){
+        clearInterval(intervalId);
+        counterContainer.style.display = "none"
+    }
+}, 1000);
+
  
  //hacemos evento para que cargue main
  window.addEventListener("load", main);

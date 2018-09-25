@@ -6,30 +6,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="evape.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body id="cuerpo">
   <header id="cabecera" class="container">
     <nav class="navbar">      
-      <a href="../index.html">Index</a>
+      <a href="../index.html" class="index">Index</a>
       <div class="botones">
-        <button class="toggle-perfil">Oculta el perfil</button>
-        <button class="toggle-experimentos">Oculta los experimentos</button>
+        <button class="toggle-perfil" title="Hide the profile"><i class="fas fa-user"></i></button>
+        <button class="toggle-experimentos" title="Hide the experiments"><i class="fas fa-flask"></i></button>
       </div>
     </nav>
-    <h1>Cohort 09 2918</h1>
+    <nav class="search">
+      <div class="inputzone">
+        <span>Cohort 09 2918</span>
+        <input type="text" placeholder="Student name">
+      </div>   
+      <div class="search-results">           
+      </div>          
+    </nav>
   </header>
-  <main id="site-main">
-      <div class="search">
-          <label for="name"> Students</label>
-            <div class="input-student">
-              <input type="text">
-              <div class="search-results">
-                
-              </div>
+  <main id="site-main">           
+            <div class="counter-container">
+                <p>Wanna stay here?</p>
+                <div class="counter-number">
+      
+                </div>
             </div>
-         
-        </div>
     <section class="perfil container">
       <h2>Eva</h2>
       <p>Lorem ipsum <em>as </em>dolor sit amet, <strong>juas </strong>coibus et magnis dis parturient<span>Esto es un span</span></p>
