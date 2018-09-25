@@ -37,4 +37,60 @@ function main(){
     //
 }
 
-window.addEventListener("load", main);
+//añadimos buscador de estudiantes con un en el html
+ //seleccionamos input
+ var input = document.querySelector('.input-student input');
+ //añadimos evento para cuando escribamos en el input
+   input.addEventListener('keyup', handleKeyUp);
+   input.addEventListener('click', function(event){
+       event.stopPropagation();
+   })
+ 
+   document.body.addEventListener('keyup', function(event){
+    if(event.key === 'Escape'){
+        searchResultsElement.innerHTML ='';
+    }
+   });
+   document.body.addEventListener('click', function(){
+    searchResultsElement.innerHTML ='';
+   })
+
+   //función que limpia la pantalla
+
+ //función para el evento
+ function findStudents(searchTerm){
+   var results = [];
+   if(searchTerm){
+   results = students.filter(function(student){
+     var studentName = student.name.toLowerCase();
+     if(studentName.indexOf(searchTerm) !== -1){
+       return true;
+     }
+   })
+ }
+ return results;
+ }  
+ 
+ var searchResultsElement = document.querySelector('.search-results');
+
+ function displayResults (results){
+     searchResultsElement.innerHTML = '';
+     var searchResultsListElement = document.createElement('ul');
+     results.forEach(function(result){
+       var resultLink = document.createElement('a');
+       resultLink.innerText = result.name;
+       resultLink.setAttribute('href', '../' + result.url);
+       var resultListItem = document.createElement('li');
+       resultListItem.appendChild(resultLink);
+       searchResultsListElement.appendChild(resultListItem);
+     })
+     searchResultsElement.appendChild(searchResultsListElement);
+ }
+function handleKeyUp(){
+    var searchTerm = input.value.toLowerCase();
+    var results = findStudents(searchTerm);
+    displayResults(results); 
+}
+ 
+ //hacemos evento para que cargue main
+ window.addEventListener("load", main);
